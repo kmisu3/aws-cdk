@@ -1,0 +1,22 @@
+services:
+  cdk:
+    build:
+      context: .
+    working_dir: /workspace
+    user: node
+    environment:
+      AWS_PROFILE: "${AWS_PROFILE:-sandbox}"
+      AWS_REGION: "${AWS_REGION:-ap-northeast-1}"
+      AWS_EC2_METADATA_DISABLED: "true"
+      AWS_PAGER: ""
+    volumes:
+      - .:/workspace
+      - node_modules:/workspace/node_modules
+      - aws_config:/home/node/.aws
+    stdin_open: true
+    tty: true
+    init: true
+
+volumes:
+  aws_config:
+  node_modules:

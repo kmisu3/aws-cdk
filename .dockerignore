@@ -1,0 +1,13 @@
+.git
+.gitignore
+.env
+.env.*
+cdk.out
+coverage
+node_modules
+npm-debug.log*
+README.md
+spec.md
+.aws
+.DS_Store
+dist
